@@ -319,7 +319,7 @@ class GPIOBase(object):
 
     def _export_pwm(self, channel):
         self.exported_pwm.append(channel)
-        cmd = 'echo %d > /sys/class/pwm/pwmchip0/export 2>&1' % channel
+        cmd = 'echo %s > /sys/class/pwm/pwmchip0/export 2>&1' % channel
         self._exec_cmd(self._export_pwm.__name__, cmd)
 
     def _unexport_pwm(self, channel):
